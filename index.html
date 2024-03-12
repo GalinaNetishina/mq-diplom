@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,63 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>hello</h1>
+    <header>       
+        <nav class="menu">
+            <img class="header__logo" src="svg/noemi-logo.svg" alt="noemi logo">
+            <ul class="menu__list">              
+              <li><a href="main_page" class="nav__link">Главная</a></li>
+              <li><a href="posts" class="nav__link">Посты</a></li>
+              <li><a href="articles" class="nav__link">Статьи</a></li>
+              <li><a href="tags" class="nav__link">Теги</a></li>
+              <li><a href="themes" class="nav__link">Темы</a></li>
+              <li><a href="contacts" class="nav__link">Контакты</a></li>
+            </ul>  
+        </nav>
+        <div class="back">
+        <h1 class="header__title">Блог о творчестве, спорте и образе жизни</h1>
+        </div>
+    </header>
+    <section class="trends">
+        <h1>Сейчас в тренде</h1>
+        <div class="container">
+            <div class="cards">
+                <img src="images/trend1.jpg" alt="рассада на подоконнике">
+                <article>
+                    <div class="tags">
+                        <p>lifestyle</p><p>interior</p>
+                    </div>
+                    <h2>сейчас в тренде: сад на подоконнике</h2>
+                </article>
+            </div>
+            <div class="cards">
+                <img src="images/trend2.jpg" alt="красивые сыры">
+                <article>
+                    <div class="tags">
+                        <p>food</p>
+                    </div>
+                    <h2>сыры на красивых картинках из интернета: какие они на вкус?</h2>
+                </article>
+            </div>
+            <div class="cards">
+                <img src="images/trend3.jpg" alt="девушка смотрит на горный пейзаж">
+                <article>
+                    <div class="tags">
+                        <p>lifestyle</p><p>travel</p>
+                    </div>
+                    <h2>собираемся в первый поход в горы</h2>
+                </article>
+            </div>
+            <div class="cards">
+                <img src="images/trend4.jpg" alt="корзинка лимонов">
+                <article>
+                    <div class="tags">
+                        <span>food</span><span>health</span>
+                    </div>
+                    <h2>сейчас в тренде: сколько витамина с в лимонах</h2>
+                </article>
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
