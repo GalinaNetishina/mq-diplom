@@ -68,7 +68,7 @@ header {
     display: flex;
     font-family: "OS reg", "Arial", sans-serif;
     font-size: 13px;
-    width: 50%;
+    width: 40%;
     justify-content: space-between;
 }
 
@@ -100,7 +100,7 @@ header {
 
 
 /*тренд*/
-.trends h1{
+section>h1{
     font-size: 20px;
     color: black;
     text-align: center;
@@ -183,9 +183,11 @@ main {
     display: flex;
     width: 75%;
     margin: auto;
-    font-size: 15px;
+    gap: 70px;
 }
-
+.posts_container {
+    width: 75%;
+}
 .post img {
     width: 45%;
     margin: 15px;
@@ -193,7 +195,6 @@ main {
 
 .post {
     margin-bottom: 20px;
-    width: 70%;
 }
 
 .content {
@@ -201,13 +202,88 @@ main {
     text-transform: none;
 }
 
-
-aside {
-    width: 20%;
-}
 /*новые посты*/
+
+aside .title,
+aside h1 {
+    font-size: 14px;
+    color: black;
+    line-height: 18px;
+}
+aside {
+    width: 28%;
+}
+aside article {
+    display: flex;
+    gap: 10px;
+}
+
+aside .frame {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+img {
+    width: 70px;
+}
+aside .new-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
 /*форма*/
+.search {
+    position: relative;
+}
+input {
+    font-size: 13px;
+    font-family: "OS reg", sans-serif;
+    line-height: 2em;
+}
+.search input {
+    width: 85%;
+}
+.search button{
+    width: 2em;
+    height: 2em;
+    background-color: var(--accent-color);
+    background-image: url("../svg/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+.ico {
+    content: "<img src='../svg/search.svg'>";
+    width: 30px;
+}
+
 /*теги*/
+.tags ul {
+    padding:0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap:5px;
+}
+.tags li {
+    font-size: 12px;
+    line-height: 0;
+    color: #0f0d0e;
+    background-color: rgba(244,243,241,0);
+    border: 3px solid #eeeeee;
+    padding: 10px;
+    
+    
+}
+
+.tags li:hover {
+    outline-color: var(--accent-color);
+    outline-offset: 3px;
+    outline-style: auto;
+}
 /*темы*/
 /*наши изделия*/
 /*попап*/
