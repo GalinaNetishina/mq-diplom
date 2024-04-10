@@ -16,16 +16,18 @@
          url('../fonts/OpenSans-Bold.ttf');
 }
 
+.white {
+    color: white;
+}
+
 body {
     --accent-color: #b59f5b;
-
     padding: 0;
     margin: 0;
-
-    color: black;
     font-family: "OS bold", "Arial", sans-serif;
     text-transform: uppercase;
     font-size: 15px;
+    color: black;
 }
 
 ul {
@@ -34,8 +36,14 @@ ul {
     margin: 0;
 }
 
+li {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
 a {
-    font-style: none;
+    font-style: normal;
     text-decoration: none;
     color: inherit;
 }
@@ -44,83 +52,16 @@ section {
     margin-bottom: 50px;
 }
 
-/*шапка*/
-
-header {
-    height: 450px;
-    position: relative;
-    z-index: -2;
-    padding-left: 20%;
-    padding-right: 20%;
-
-    background-image: url("../images/banner-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: black;
-    color: white; 
-}
-
-.menu {
-    height: 6em;
-    position: absolute;
-    top: 0;
-    right: 15%;
-    display: flex;
-}
-
-.menu__list {
-    width: 40%;
-    display: flex;    
-    justify-content: space-between;
-    z-index: 1;
-    font-family: "OS reg", "Arial", sans-serif;
-    font-size: 13px;  
-    gap: 2em;  
-}
-
-.logo {
-    height:3em;
-    position: absolute;
-    top: 0;
-    left: 15%;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-.intro {
-    font-size: 45px;
-    line-height: 75px;
-    text-align: center;
-}
-
-.back::before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-
-/*тренд*/
-
-section>h1{
+section>h2 {
     margin-top: 0;
     font-size: 20px;
-    color: black;
     text-align: center;
     position: relative;
 }
 
-.br {
+h2::after {
+    content: '';
+    display: block;
     width: 50px;
     height: 10px;
     margin: auto;
@@ -128,13 +69,87 @@ section>h1{
     
     border-bottom: 3px solid var(--accent-color);
 }
+article {
+    display: block;
+}
+
+/*шапка*/
+
+header {
+    height: 450px;
+    position: relative;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../images/banner-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: black; 
+    margin-bottom: 30px;
+}
+
+.menu {
+    position: absolute;
+    top: 1em;
+    right: 15%;
+    display: flex;
+    z-index: 3;
+}
+
+.menu__list {
+    width: 40%;
+    display: flex; 
+    height: 6em;   
+    justify-content: space-between;
+    font-family: "OS reg", "Arial", sans-serif;
+    font-size: 13px;  
+    gap: 2em;  
+}
+
+.menu__list a:hover{
+    text-decoration: underline;
+}
+
+.logo {
+    height:3em;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    z-index: 3;
+}
+
+.intro {
+    font-size: 45px;
+    line-height: 75px;
+    text-align: center;
+    z-index: 4;
+}
+
+header::after,
+.container article::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index:0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/*тренд*/
 
 .container {
     width: 100%;
-    margin: 50px 0 50px;
+    margin-bottom: 50px;
     display: flex;
     gap: 10px;
-    color: white;
 }
 
 .trends img {
@@ -144,6 +159,7 @@ section>h1{
 }
 
 .trends article {
+    width: 100%;
     position: relative;
 }
 
@@ -156,40 +172,40 @@ section>h1{
 }
 
 
-.tags {   
+.tags{   
     padding-right: 10px;
     color: var(--accent-color);
     font-size: 14px;
     line-height: 40px;
 }
 
-.trends .tags:hover {
+.tags:hover {
     text-decoration: underline;
 }
 
-.title {
+h3 {
+    margin-top: 0;
     display: block;
-    color: white;
     font-size: 20px;
     line-height: 24px;
+    margin-bottom: 0;
 }
 
-.group .title:hover {
+h3:hover {
     color: var(--accent-color);
 }
 
 /*посты*/
 
 time {
-    display: inline;
     margin-right: 20px;
     font-size: 12px;
-    line-height: 40px;
     color: #888888;
     font-weight: 400;
     font-family: "OS reg", "Arial", sans-serif;
     text-transform: lowercase;
 }
+
 .author {
     display: inline;
     font-family: "OS bold", "Arial", sans-serif;
@@ -198,32 +214,34 @@ time {
     font-size: 12px;
 }
 
-article {
+.main_block {
     display: flex;
-    align-items: flex-start;
-}
-.post .title {
-    color: black;
+    margin: 0 245px;
+    gap: 50px;
 }
 
 main {
-    display: flex;
-    position: absolute;
-    left: 0;
-    margin-left: 10%;
     padding-left: 10px;
-    width: 50%;
+}
+
+main .post{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 70px;
 }
 
 .post img {
-    width: 45%;
-    margin: 15px;
+    width:50%;
+    margin-right: 20px;
+}
+.post>.frame {
+    
+    width:60%;
+}
+.post ul{
+    display: inline;
 }
 
-.post {
-    width: 100%;
-    margin-bottom: 20px;
-}
 
 .content {
     font-family: "OS reg", "Arial", sans-serif;
@@ -233,44 +251,27 @@ main {
 
 /*новые посты*/
 
-aside .title,
-aside h1 {
+aside h3 {
     font-size: 14px;
-    color: black;
     line-height: 18px;
-}
-
-aside {
-    margin-right: 10%;
-    padding-right: 10px;
-    position: absolute;
-    right: 0;
-    width: 20%;
-}
-
-aside article {
-    display: flex;
-    gap: 10px;
-}
-aside h1{
     margin-top: 0;
 }
 
-aside .frame {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-}
 
-img {
-    width: 70px;
+aside {
+    padding-right: 10px;
+    flex-shrink: 0;
+    width: 270px;
 }
-
-aside .new-posts {
+aside .post {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin-bottom: 20px;
+}
 
+aside .post img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
 }
 
 /*форма*/
@@ -279,22 +280,25 @@ input {
     box-sizing: border-box;
     font-size: 13px;
     font-family: "OS reg", sans-serif;
-    height: 3em;
+    height: 48px;
+    padding-left: 1em;
     width: 100%;
+    border: none;
+    background-color: #f4f7f6;
 }
 
 .search input {
-    width: 80%;
+    width: 222px;
+    float: left;
 }
 
-.search section {
-    display: flex;
+input:focus {
+    outline: 1px solid var(--accent-color);
 }
-
 
 .search button{
-    width: 3em;
-    height: 3em;
+    width: 48px;
+    height: 48px;
     background-color: var(--accent-color);
     background-image: url("../svg/search.svg");
     background-repeat: no-repeat;
@@ -304,48 +308,55 @@ input {
     
 }
 
+.search button:hover {
+    background-color: #0f0d0e;
+}
+
 .submit{
     height: 3em;
     width: 100%;
     border: none;
     margin-top: 1em;
     background-color: var(--accent-color);
-    color: white;
     font-size: 14px;
     font-family: inherit;
     text-transform: uppercase;
 }
 
+aside .submit button:hover {
+    background-color: #323232;
+}
+
 
 /*теги*/
-.tags ul {
+
+#tags>.all_tags ul {
     padding:0;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap:5px;
 }
-.tags li {
+
+aside .all_tags li {
     font-size: 12px;
-    line-height: 0;
+    
     color: #0f0d0e;
     background-color: rgba(244,243,241,0);
     border: 3px solid #eeeeee;
     padding: 10px;
 }
 
-.tags li:hover {
-    outline-color: var(--accent-color);
-    outline-offset: 3px;
-    outline-style: auto;
+aside .all_tags li:hover {
+    outline: solid 3px var(--accent-color);
 }
 
 /*темы*/
-.cat {
+.category {
     padding-left: 0;
     text-transform: none;
 }
-.cat:hover {
+.category:hover {
     color: var(--accent-color);
 }
 
@@ -355,6 +366,7 @@ input {
 }
 
 .categories li{
+    display: block;
     padding: 1em 0;
     width: 100%;
     border-bottom: 1px solid #eeeeee;
