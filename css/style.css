@@ -16,6 +16,10 @@
          url('../fonts/OpenSans-Bold.ttf');
 }
 
+#hidden {
+    display: none;
+}
+
 .white {
     color: white;
 }
@@ -49,8 +53,16 @@ a {
     color: inherit;
 }
 
+body>* {
+    margin: 0px auto;
+    width: 70%;
+}
+
+.full {
+    width: 100%;
+}
 section {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 section>h2 {
@@ -71,6 +83,11 @@ h2::after {
     border-bottom: 3px solid var(--accent-color);
 }
 
+select, input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 
 /*шапка*/
 .background {
@@ -87,8 +104,7 @@ header {
     justify-content: center;
     align-items: center;
     background-image: url("../images/banner-bg.jpg");
-    padding: 40px 20%;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .top_line {
@@ -125,6 +141,7 @@ header {
 .intro {
     font-size: 45px;
     line-height: 75px;
+    width: 60%;
     margin: 0 auto;
     text-align: center;
     z-index: 4;
@@ -292,7 +309,7 @@ aside .post img {
 
 /*форма*/
 
-input {
+input, select, textarea {
     box-sizing: border-box;
     font-size: 13px;
     font-family: "OS reg", sans-serif;
@@ -308,8 +325,11 @@ input {
     float: left;
 }
 
-input:focus {
-    outline: 1px solid var(--accent-color);
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid var(--accent-color);
+    outline: none;
 }
 
 .search button{
@@ -393,14 +413,15 @@ aside #ul_tags {
 
 .goods__container {
     display: flex;
-    width: 70%;
     margin: 0 auto;
-    justify-content: space-between;
-    align-items: stretch;
+    padding: 1em;
+    box-sizing: border-box;
+    gap: 5em;
 }
 
 .goods__card {
-    width: 30%;
+    width:27%;
+    flex-grow: 2;
 }
 
 .description a {
@@ -415,23 +436,21 @@ aside #ul_tags {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .goods img{
-    width:90%;
-    padding-left:1em;
-    padding-right: 1em;
     flex-grow: 0;
 }
 
 .goods__group {
-    position: relative;
     align-self: center;
+    position: relative;
+    padding-top: 1em;
     top: -1em;
-    padding: 1em;
-    border: solid 3px var(--accent-color);
+    outline: solid 3px var(--accent-color);
+    outline-offset: 1em;
 }
+
 .shop {
     height: 3em;
     display: inline;
@@ -442,6 +461,7 @@ aside #ul_tags {
     font-family: inherit;
     text-transform: uppercase;
 }
+
 .old-price {
     text-decoration: line-through;
     display: block;
@@ -455,18 +475,120 @@ aside #ul_tags {
 
 /*попап*/
 
+.hidden {
+    display: none!important;
+}
+
+.popup {
+    position:fixed;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.popup label {
+    text-transform: none;
+    font-family: "OS reg", sans-serif;
+    display: block;
+    padding-bottom: 0.5em;
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.popup form {
+    background-color: white;
+    position:relative;
+    padding: 2em;
+    width: 25%;
+    height: 75%;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+popup form:before {
+    content: '';
+    position: fixed;
+    right: 0;
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-image: url('../svg/form-x.svg');
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.popup textarea {
+    min-height: 7em;
+    padding: 1em;
+    resize: none;
+}
+
+.popup select {
+    --webkit-appearance: none;
+    --moz-appearance: none;
+    padding: 1em;
+    background-position: right 1em center;
+    background-image: url("../svg/form-arrows.svg");
+    background-repeat: no-repeat;
+    background-size: 10px;
+}
+
+.popup fieldset {
+    display: flex;
+    justify-content: flex-start;
+    vertical-align: middle;
+    border: none;
+    gap: 2em;
+}
+
+input[type=radio] {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    
+  }
+
+input[type=radio] + label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("../svg/form-empty-circle.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1.1em;
+    width: 1.1em;
+    margin-right: 0.5em;
+    
+  }
+
+  input[type=radio]:checked + label:before {
+    background-image: url("../svg/form-circle.svg");
+  }
+
+
 /*подвал*/
-.media{
+
+.media {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto 50px auto;
-    width: 70%;
     height: 6em;
     background-color: #f4f7f6;
 }
 
-.media img{
+.media img {
     height: 2em;
     margin: 1em;
 }

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="background">
+    <header class="background full">
         <div class="top_line">
             <img class="logo" src="svg/noemi-logo.svg" alt="логотип ноеми">
             <nav class="menu white">
@@ -26,7 +26,7 @@
         </div>
         <h1 class="intro white">Блог о творчестве, спорте и образе жизни</h1>
     </header>
-    <section class="trends">
+    <section class="trends full">
         <h2>Сейчас в тренде</h2>
         <div class="trends__container white">
             <article class="trends__card background" id="card1">
@@ -336,15 +336,36 @@
         </div>
     </section>
     <footer>
-        <div class="media" id="contacts">
+        <address class="media" id="contacts">
             <ul>
                 <li><a href=""><img alt="dribbble logo" src="svg/001-dribbble.svg"></a></li>
                 <li><a href=""><img alt="pinterest logo" src="svg/001-pinterest.svg"></a></li>
                 <li><a href=""><img alt="tumblr logo" src="svg/003-tumblr.svg"></a></li>
             </ul>
-        </div>
+        </address>
         <p class="copyright">Copyright © 2009–2019 City Blog LLC.</p>
     </footer>
+    <div class="popup hidde">
+        <form>
+            <h2>Ваш фидбек</h2>
+            <span class="line"><label for="dropdown">Как часто вы заходите на сайт?</label>
+            <select id="dropdown">
+                <option value="daily" selected>Почти каждый день</option>
+                <option value="rare">Редко</option>
+            </select>
+            </span>
+            <div class=line><label>Вы подписаны на e-mail рассылку?</label>
+            <fieldset class="isSubscribed">
+                <input type="radio" id="yes" name="isSubscribed">
+                <label for="yes" class="options">Да</label>
+                <input type="radio" id="no" name="isSubscribed">   
+                <label for="no" class="options">Нет</label>  
+            </fieldset></div>
+            <span class=line><label for="textarea">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</label>
+            <textarea id="textarea" placeholder="Может, больше рецептов?"></textarea></span>
+            <button class="submit white">Отправить</button>
+        </form>
+    </div>
 
 </body>
 
