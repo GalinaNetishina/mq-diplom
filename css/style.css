@@ -263,7 +263,9 @@ main {
 }
 
 .post img {
-    width:50%;
+    height: 100%;
+    min-width: 45%;
+    background-color: #888888;
 }
 
 .frame {
