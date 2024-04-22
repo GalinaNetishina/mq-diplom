@@ -85,11 +85,12 @@
                     <a href="">
                         <h3>10 мест, ради которых стоит проснуться на рассвете</h3>
                     </a>
-                    <time datetime="2019-07-10">10 июня 2019</time>
-                    <address class="author">
-                        <a rel="author" href="">Неизвестный автор</a>
-                    </address>
-
+                    <span class="post_info">
+                        <time datetime="2019-07-10">10 июня 2019</time>
+                        <address class="author">
+                            <a rel="author" href="">Неизвестный автор</a>
+                        </address>
+                    </span>
                     <div class="content">
                         Итак, Вы в Питере. Раннее утро. Лед с рек и каналов уже ушел,
                         запущены фонтаны города... Музеи еще закрыты. Что посмотреть?
@@ -106,11 +107,12 @@
                     <a href="">
                         <h3>ЙОга для начинающих в домашних условиях</h3>
                     </a>
-                    <time datetime="2019-07-10">10 июня 2019</time>
-                    <address class="author">
-                        <a rel="author" href="">Неизвестный автор</a>
-                    </address>
-
+                    <span class="post_info">
+                        <time datetime="2019-07-10">10 июня 2019</time>
+                        <address class="author">
+                            <a rel="author" href="">Неизвестный автор</a>
+                        </address>
+                    </span>
                     <div class="content">
                         Расскажем, какие упражнения выбрать и как сделать коврик для
                         занятий йогой из того, что можно найти в шкафу.
@@ -126,12 +128,12 @@
                     <a href="">
                         <h3>лучшие музыкальные фестивали этого лета</h3>
                     </a>
-
-                    <time datetime="2019-07-10">10 июня 2019</time>
-                    <address class="author">
-                        <a rel="author" href="">Неизвестный автор</a>
-                    </address>
-
+                    <span class="post_info">
+                        <time datetime="2019-07-10">10 июня 2019</time>
+                        <address class="author">
+                            <a rel="author" href="">Неизвестный автор</a>
+                        </address>
+                    </span>
                     <div class="content">
                         <p>
                             Лето на носу, а с ним и музыкальные фестивали. На каком же из
@@ -151,11 +153,12 @@
                     <a href="">
                         <h3>Наукоёмкий подход к кулинарии</h3>
                     </a>
-                    <time datetime="2019-07-10">10 июня 2019</time>
-                    <address class="author">
-                        <a rel="author" href="">Неизвестный автор</a>
-                    </address>
-
+                    <span class="post_info">
+                        <time datetime="2019-07-10">10 июня 2019</time>
+                        <address class="author">
+                            <a rel="author" href="">Неизвестный автор</a>
+                        </address>
+                    </span>
                     <div class="content">
                         Узнаем основы проектирования новых пищевых и около-пищевых опытов,
                         вскроем физику, химию и микробиологию еды.
@@ -173,11 +176,12 @@
                     <a href="">
                         <h3>делаем модные принты на подушках для интерьера</h3>
                     </a>
-                    <time datetime="2019-07-10">10 июня 2019</time>
-                    <address class="author">
-                        <a rel="author" href="">Неизвестный автор</a>
-                    </address>
-
+                    <span class="post_info">
+                        <time datetime="2019-07-10">10 июня 2019</time>
+                        <address class="author">
+                            <a rel="author" href="">Неизвестный автор</a>
+                        </address>
+                    </span>
                     <div class="content">
                         Подушки для дивана целесообразнее заказать в съемных чехлах на
                         молнии, если потребуется чистка подушек, проще снять чехлы, чем
@@ -344,8 +348,9 @@
         </address>
         <p class="copyright">Copyright © 2009–2019 City Blog LLC.</p>
     </footer>
-    <div class="popup hidden">
-        <form>
+    <div class="popup_bg hidden">
+        <form class="popup">
+            <div class="popup_close"></div>
             <h2>Ваш фидбек</h2>
             <span class="line"><label for="dropdown">Как часто вы заходите на сайт?</label>
             <select id="dropdown">
@@ -353,19 +358,25 @@
                 <option value="rare">Редко</option>
             </select>
             </span>
-            <div class=line><label>Вы подписаны на e-mail рассылку?</label>
-            <fieldset class="isSubscribed">
+            <span class=line><label for="isSubscribed">Вы подписаны на e-mail рассылку?</label>
+            <fieldset id="isSubscribed">
                 <input type="radio" id="yes" name="isSubscribed">
                 <label for="yes" class="options">Да</label>
-                <input type="radio" id="no" name="isSubscribed">   
+                <input type="radio" id="no" name="isSubscribed" checked>   
                 <label for="no" class="options">Нет</label>  
-            </fieldset></div>
+            </fieldset></span>
             <span class=line><label for="textarea">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</label>
             <textarea id="textarea" placeholder="Может, больше рецептов?"></textarea></span>
             <button class="submit white">Отправить</button>
         </form>
     </div>
-
+<script>
+    const logo = document.querySelector(".logo");
+    const popup = document.querySelector(".popup_bg");
+    const close_button = document.querySelector(".popup_close");
+    close_button.addEventListener('click', () => {popup.classList.add('hidden')});
+    logo.addEventListener('click', () => {popup.classList.remove('hidden')});
+</script>
 </body>
 
 </html>
