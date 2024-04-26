@@ -16,10 +16,6 @@
          url('../fonts/OpenSans-Bold.ttf');
 }
 
-#hidden {
-    display: none;
-}
-
 .white {
     color: white;
 }
@@ -56,11 +52,20 @@ a {
 body>* {
     margin: 0px auto;
     width: 70%;
+    @media (max-width: 640px) {
+        box-sizing: border-box;
+        width: 100vw;
+        padding: 0 15px;
+    }
 }
 
 .full {
     width: 100%;
+    @media (max-width: 640px) {
+        padding: 0;
+    }
 }
+
 section {
     margin-bottom: 60px;
 }
@@ -69,7 +74,6 @@ section>h2 {
     margin-top: 0;
     font-size: 20px;
     text-align: center;
-    position: relative;
 }
 
 h2::after {
@@ -79,7 +83,6 @@ h2::after {
     height: 10px;
     margin: auto;
     margin-bottom: 20px;
-    
     border-bottom: 3px solid var(--accent-color);
 }
 
@@ -93,7 +96,7 @@ select, input{
 .background {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-color: black;
 }
 
@@ -105,6 +108,28 @@ header {
     align-items: center;
     background-image: url("../images/banner-bg.jpg");
     margin-bottom: 60px;
+    padding-top: 1.5em;
+    @media (max-width: 640px)  {
+        width: 100vw;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+}
+
+.burger_menu {
+    display: none;
+    @media (max-width: 640px) {
+        display: block;
+        width: 3em;
+        position: absolute;
+        top: 4em;
+        right: 2em;
+        line-height: 1em;
+        text-decoration: solid line-through white 3px;
+        font-size: 10px;
+        color: rgba(0,0,0,0);
+        z-index: 3;
+    }
 }
 
 .top_line {
@@ -117,6 +142,13 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 640px) and (orientation: portrait){
+        position: static;
+        display: block;
+        width: 100%;
+        padding: 1em;
+        margin-bottom: 2em;
+    }
 }
 
 
@@ -127,7 +159,9 @@ header {
     font-family: "OS reg", "Arial", sans-serif;
     font-size: 13px;   
     gap: 2em;  
-
+    @media (max-width: 640px) {
+        display: none;
+    }
 }
 
 .menu__list a:hover{
@@ -135,7 +169,12 @@ header {
 }
 
 .logo {
-    height:2em;
+    height:2em; 
+    @media (max-width: 640px) {
+        width: 100%;
+        height: 3.5em;
+        
+    }   
 }
 
 .intro {
@@ -145,11 +184,17 @@ header {
     margin: 0 auto;
     text-align: center;
     z-index: 4;
+    @media (max-width: 640px) {
+        font-size: 26px;
+        line-height: 36px;
+        width: 90%;
+    }
 }
 
 #card1 {
     background-image: url("../images/trend1.jpg");
 }
+
 #card2 {
     background-image: url("../images/trend2.jpg");
 }
@@ -157,6 +202,7 @@ header {
 #card3 {
     background-image: url("../images/trend3.jpg");
 }
+
 #card4 {
     background-image: url("../images/trend4.jpg");
 }
@@ -181,6 +227,12 @@ header::after,
     width: 100%;
     margin-bottom: 50px;
     display: flex;
+    @media (max-width: 640px) and (orientation:landscape) {
+        flex-wrap: wrap;
+    }
+    @media (max-width: 640px) and (orientation:portrait) {
+        flex-direction: column;
+    }
     gap: 10px;
 }
 
@@ -193,6 +245,9 @@ header::after,
 .trends article {
     width: 100%;
     position: relative;
+    @media (max-width: 640px) and (orientation:landscape) {
+        width: 48%;
+    }
 }
 
 .trends__group {
@@ -202,7 +257,10 @@ header::after,
     margin: 1em;
     padding: 1.4em;
 }
-
+.row_tags {
+    display: flex;
+    flex-wrap: wrap;
+}
 .tags{   
     padding-right: 1em;
     margin-bottom: 1em;
@@ -251,10 +309,17 @@ time {
     display: flex;
     margin: 0 15%;
     gap: 50px;
+    @media (max-width: 640px) {
+        flex-direction: column;
+        margin: 0 ;
+    }
 }
 
 main {
     padding-left: 10px;
+    @media (max-width: 640px) {
+        padding-left: 0;
+    }
 }
 
 .post {
@@ -262,6 +327,12 @@ main {
     gap: 1em;
     align-items: flex-start;
     margin-bottom: 70px;
+    
+}
+main .post {
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
 }
 
 main .post img {
@@ -269,6 +340,9 @@ main .post img {
     min-width: 45%;
     min-height: 290px;
     background-color: #eff6f1;
+    @media (max-width: 640px) {
+        min-width: 100%;
+    }
 }
 
 main .frame {
@@ -302,6 +376,10 @@ aside {
     padding-right: 10px;
     flex-shrink: 0;
     width: 270px;
+    @media (max-width: 640px) {
+        width: 100%;
+        padding-right: 0;
+    }
 }
 
 aside .post {
@@ -327,9 +405,8 @@ input, select, textarea {
     background-color: #f4f7f6;
 }
 
-.search input {
-    width: 222px;
-    float: left;
+.search_form{
+    display: flex;
 }
 
 input:focus,
@@ -339,7 +416,7 @@ select:focus {
     outline: none;
 }
 
-.search button{
+.search_form button{
     width: 48px;
     height: 48px;
     background-color: var(--accent-color);
@@ -348,6 +425,7 @@ select:focus {
     background-position: center;
     background-size: 60%;
     border: none;
+    flex-shrink: 0;
     
 }
 
@@ -425,6 +503,9 @@ aside #ul_tags {
     padding: 1em;
     box-sizing: border-box;
     gap: 5em;
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
 }
 
 .goods__card {
@@ -433,6 +514,9 @@ aside #ul_tags {
     display: flex;
     flex-direction: column;
     flex-grow: 2;
+    @media (max-width: 640px) {
+        width: 100%;
+    }
 }
 
 .description a {
@@ -610,3 +694,7 @@ input[type=radio] + label::before {
     color: #999999;
     text-align: center;
 }
+
+
+
+
